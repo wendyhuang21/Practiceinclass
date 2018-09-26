@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537947566062.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "43961785",
+    "id" : "97B6C725",
+    "lastKnownWriteTime" : 1537947963,
+    "last_content_update" : 1537947963631,
+    "path" : "C:/Users/NTPU/Desktop/Practiceinclass/2018-09-26.Rmd",
+    "project_path" : "2018-09-26.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "5,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
