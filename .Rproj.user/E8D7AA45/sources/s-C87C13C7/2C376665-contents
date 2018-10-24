@@ -1,0 +1,31 @@
+---
+title: "exercise1"
+date: "20181023"
+output: html_document
+params:
+  studentID: "410773110"
+  studentName: "黃雅晨"
+---
+
+```{r}
+library(readr)
+bankdata <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/bankdata.csv"")
+```
+
+```{r}
+as.factor()
+```
+
+```{r}
+x<-c(090,091,092,093,094,095,096,097,098,099,100,101,102,103,104,105,106,107)
+y<-c(1911)
+x+y
+```
+
+```{r}
+lubridate::with_tz(2018/30/09 00:00)
+grep("Taipei",OlsonNames(),value=TRUE)
+
+```
+
+
