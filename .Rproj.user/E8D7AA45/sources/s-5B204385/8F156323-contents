@@ -1,5 +1,5 @@
 ---
-title: '20181024'
+title: '2018-10-03'
 output: html_document
 ---
 
@@ -26,3 +26,17 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+library(readr)
+studentID <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/studentID.csv")
+
+```
+
+```{r}
+library(stringr)
+str_sub(studentID$學號,5,6)->aa
+table(aa)
+```
+
