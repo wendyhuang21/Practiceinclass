@@ -1,0 +1,8 @@
+"0","bb<-classSurvey[aa == ""台北市"",c(""姓名"")]"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

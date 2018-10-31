@@ -1,0 +1,15 @@
+"0","names(StuDF) <- c(""學號"",""姓名"",""成績"")"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","names(StuDF)"
+"1","[1]"
+"1"," ""學號"""
+"1"," ""姓名"""
+"1"," ""成績"""
+"1","
+"

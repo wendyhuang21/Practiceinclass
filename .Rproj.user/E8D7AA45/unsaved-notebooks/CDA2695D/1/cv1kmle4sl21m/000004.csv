@@ -1,0 +1,9 @@
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","## 無法用$一次取兩個元素"
+"0","# StuDF$c(""StuID"",""name"")"
