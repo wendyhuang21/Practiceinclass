@@ -1,0 +1,44 @@
+"0","gs_auth(new_user = TRUE)"
+"2","Disabling .httr-oauth by renaming to .httr-oauth-SUSPENDED
+"
+"2","Removing google token stashed internally in 'googlesheets'.
+"
+"2","httpuv not installed, defaulting to out-of-band authentication
+"
+"0","4/iQByha1GRDZIru03r3CfD3MOe_3Y-gFSzeEutb7fZxa_lo1mbjRtZgw"
+"0","gsSurvey<-gs_key(""1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE"")  #download sheet information as an object"
+"2","Sheet successfully identified: ""全班通訊錄 (Responses)""
+"
+"0","classSurvey<-gs_read(gsSurvey,ws=1) #access the 1st "
+"2","Accessing worksheet titled 'Form Responses 1'.
+"
+"1","Downloading: "
+"1","950 B"
+"1","     "
+"1","Downloading: "
+"1","950 B"
+"1","     "
+"1","Downloading: "
+"1","2.3 kB"
+"1","     "
+"1","Downloading: "
+"1","2.3 kB"
+"1","     "
+"1","Downloading: "
+"1","2.3 kB"
+"1","     "
+"1","Downloading: "
+"1","2.3 kB"
+"1","     "
+"2","Parsed with column specification:
+cols(
+  Timestamp = col_character(),
+  `Email Address` = col_character(),
+  姓名 = col_character(),
+  學號 = col_integer(),
+  居住地行政區 = col_character(),
+  性別 = col_character(),
+  本學期學分數 = col_integer(),
+  本學期目前已參加之課外活動 = col_character()
+)
+"
