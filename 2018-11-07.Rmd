@@ -1,0 +1,129 @@
+---
+title: '20181107'
+output: html_document
+---
+
+```{r}
+民國年月<-c("099/01","099/02","099/03")
+```
+
+```{r}
+library(stringr)
+library(lubridate)
+民國年月<-c("099/01","099/02","099/03")
+
+# 1
+str_c("1",民國年月,"/01")->民國年月
+
+# 2
+lubridate::ymd(民國年月) -> 民國年月
+
+# 3
+民國年月 + years(911)
+```
+
+```{r}
+民國年月<-c("099/01","099/02","099/03")
+
+library(dplyr)
+# 1
+民國年月 %>% 
+  str_c("1", . ,"/01") %>%
+  ymd %>%
+  { . + years(911) }
+```
+
+```{r}
+library(dplyr)
+library(readr)
+collegeData <- read_csv("https://quality.data.gov.tw/dq_download_csv.php?nid=6231&md5_url=dda8fca407131483c1d8cbf3d61cf793")
+```
+```{r}
+collegeData$學校名稱 <- as.factor(collegeData$學校名稱)
+collegeData$學校代碼 <- as.factor(collegeData$學校代碼)
+```
+
+```{r}
+collegeData$`日間∕進修別` <- as.factor(collegeData$`日間∕進修別`)
+collegeData$等級別 <- as.factor(collegeData$等級別)
+collegeData$一年級男生 <- as.numeric(collegeData$一年級男生)
+collegeData$一年級女生 <- as.numeric(collegeData$一年級女生)
+collegeData -> collegeData2
+```
+
+
+```{r}
+library(dplyr)
+mutate(
+  collegeData,
+  學校代碼=as.factor(學校代碼),
+  學校名稱=as.factor(學校名稱)
+  ) -> collegeData2
+```
+
+```{r}
+collegeData %>%
+  mutate(.,
+  學校代碼=as.factor(學校代碼),
+  學校名稱=as.factor(學校名稱)) -> collegeData2
+```
+
+
+
+```{r}
+collegeData %>% 
+  mutate(
+    `日間∕進修別`=as.factor(`日間∕進修別`),
+    等級別=as.factor(等級別),
+    一年級男生=as.numeric(一年級男生),
+    一年級女生=as.numeric(一年級女生)
+  ) -> collegeData3
+```
+
+```{r}
+library(dplyr) 
+collegeData %>% 
+mutate( 
+       `日間∕進修別`=as.factor(`日間∕進修別`), 
+       等級別=as.factor(等級別), 
+       一年級男生=as.numeric(一年級男生), 
+       一年級女生=as.numeric(一年級女生) 
+       ) -> collegeData2 
+``` 
+
+```{r}
+library(stringr)
+collegeData %>%
+  mutate(
+    一年級男生=str_replace(一年級男生,",",""),
+    一年級女生=str_replace(一年級女生,",",""),
+    一年級男生=as.numeric(一年級男生),
+    一年級女生=as.numeric(一年級女生)
+  )
+```
+
+
+```{r}
+collegeData %>% 
+  mutate(
+    `日間∕進修別`=as.factor(`日間∕進修別`),
+    等級別=as.factor(等級別),
+    一年級男生=parse_number(一年級男生,locale=cl),
+    一年級女生=parse_number(一年級女生,locale=cl)
+  ) -> collegeData4
+
+collegeData4 %>%
+  mutate(
+    一年級男生每千人=一年級男生/1000,
+    一年級女生每千人=一年級女生/1000
+    ) -> collegeData5
+```
+
+
+
+
+
+
+
+
+
