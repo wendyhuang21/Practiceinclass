@@ -1,0 +1,97 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+---
+title: "2018-12-26"
+output: html_document
+---
+
+```{r}
+plasticContainer <- list(
+  greenBox=c("paper","scissor"),     # location 1
+  redBox=c(1L,3L,2.5),               # location 2
+  blueBox=c(TRUE,FALSE,TRUE,TRUE)    # location 3
+)
+```
+
+
+```{r}
+plasticContainer[c("greenBox")] # or plasticContainer[c(1,2)]
+```
+```{r}
+plasticContainer["greenBox"][1] #用一個中括號取還是會保留母體，所以整個綠箱子還是留著
+```
+
+
+```{r}
+plasticContainer[["greenBox"]] # or plasticContainer[[1]]
+```
+
+```{r}
+plasticContainer$greenBox
+```
+```{r}
+plasticContainer$greenBox[1]
+```
+
+```{r}
+plasticContainer[["greenBox"]][1] # or plasticContainer[[1]]
+#用雙中括號取不會保留母體結構，所以這時候是取綠箱子裡的paper
+```
+
+```{r}
+install.packages("plotly")
+```
+
+```{r}
+download.file("https://github.com/tpemartin/github-data/blob/master/plotly_4070_neda.Rda?raw=true",destfile = "plotly_4070_neda.Rda")
+load("plotly_4070_neda.Rda")
+library(plotly)
+plotly_4070_neda
+```
+
+```{r}
+library(readr)
+transcriptData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcript100_102.csv",
+                  col_types = cols(
+                    學期成績="n"
+                  ))
+
+totalCredits<-function(x){
+  transcriptData[transcriptData$學號==x,]->subsample 
+  subsample %>%
+    mutate(
+      及格=(學期成績>=60)
+    ) %>%
+    summarise(
+      學號=學號[1],
+      總修習學分數=sum(學分數),
+      總實得學分數=sum(學分數[及格])
+    )  
+}
+```
+
+```{r}
+transcriptData %>%
+  filter(學屆==100,str_sub(學號,5,6)=="P1") -> subsample
+subsample$學號 %>% unique -> 符合條件學號
+```
+
+```{r}
+creditResults<-vector("list",length(符合條件學號))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
